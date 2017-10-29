@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import requests
-app = Flask(__name__)
+
+app = Flask ("MyApp")
 
 @app.route("/") #the URL is just a slash
 def hello (): #a function that returns hello world
@@ -16,5 +17,4 @@ def show_veg_restaurants():
 	print callAPI.text
 	return render_template("foods.html")
 
-if __name__ == '__main__':
-	app.run(debug=True)
+app.run(debug=True)
