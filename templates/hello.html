@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" type="text/css" href="static/appstyle.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1", user-scaleable=no>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <title>FriendFeed</title>
 </head>
-
- <body>
- <h1>Hi there veggie!</h1>
- <div id="dietary-form">
-<form method="post" action="/foods">
-<label form="name">Name:</label>
-<input type="firstname" id="firstname" name="firstname"><br>
-<label form="diet" id="diet" name="diet"></label>
-  <input type="checkbox" name="diet" value="vegetarian"> Vegetarian<br>
-  <input type="submit" value="submit" id="submit-button">
-
- </form>
- </html>
+ 
+<body>
+ 	<header>
+		<div class="jumbotron">
+	      	<h1>FoodFriends</h1>
+	    	<h2>Food + Friends - Fuss.</h2>
+	    	<h2><small>Download the App Now!</small></h2><br />
+  		</div>
+   </header>
+  	<div id=Form>
+ 		<h1>Who's there?</h1>
+ 			<div id="dietary-form">
+				<form method="post" action="/foods">
+					<label form="name">Name:</label>
+						<input type="firstname" id="firstname" name="firstname"><br>
+					<label form="diet" id="diet" name="diet"></label>
+  						<input type="checkbox" name="diet" value="vegetarian"> Vegetarian<br>
+ 					<input type="submit" value="submit" id="submit-button">
+				 </form>
+			</div>
+	</div>
+</body>
+</html>
