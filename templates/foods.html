@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" type="text/css" href="static/appstyle.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1", user-scaleable=no>
-  <title>food pg</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="static/css/appstyle.css">
+  <title>FriendFeed</title>
 </head>
+ 
+<body style="background-color: rgb(251, 60, 97)">
+ 	<header>
+		<div class="jumbotron" style="background-image: url(https://cdn.dribbble.com/users/76620/screenshots/1909179/foodpattern-drbl800.gif); background-size: cover;"">
+			<div style="background-color: rgba(255, 255, 255, 0.8);">
+		      	<h1 class="display-1" class="text-center">FoodFriends</h1>
+		    	<h2 class="text-center">Food + Friends - Fuss.</h2>
+		    	<h2 class="text-center" class="lead"><small>Download the App Now!</small></h2><br />
+  		</div>
+   </header>
+  	<div id=Form class="container-fluid">
+  		<div class="row justify-content-md-center">
+ 			<div class="row">
+ 				<div class="col"></div>
+ 				<div class="col-12" style="background-color: white; margin: 10%; border-style: 50px solid white; border-radius: 5px;">
+ 					<h1 class="text-center">Here are your results!</h1>
+						
+						{% if diet %}
+							<p>Here are the results: {{ food }}</p>P
+						{% else %}
+							<p> Hi {{firstname}}! I guess you're not fussy then! Go to the nearest place! </p>
+						{% endif %}
+				</div>
+				<div class="col"></div>	
+			</div>
+		</div>
+	</div>
 
-<body>
-<h1> fun </h1>
 </body>
 
 </html>

@@ -1,5 +1,7 @@
-html, body, #map {
-	height:100%;
-	margin:0px;
-	padding: 0px;
+header {
+	text-align: center;
+}}
+{
+	background-image: url(https://st.depositphotos.com/1059938/2307/v/950/depositphotos_23072088-stock-illustration-fast-food-pattern.jpg);
+	background-size: cover;
 }

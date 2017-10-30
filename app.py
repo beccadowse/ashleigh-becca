@@ -9,12 +9,13 @@ def hello (): #a function that returns hello world
 
 @app.route("/foods", methods=["POST"])
 def show_veg_restaurants():
-
 	form_data = request.form
+	diet = request.form.get('diet')
+	firstname = request.form.get('firstname')
 	callAPI = requests.post("https://maps.googleapis.com/maps/api/place/textsearch/json?query=Vegetarian&sensor=true&location=51.50020.1332&radius=20&type=restaurant&keyword=vegetarian&key=AIzaSyCnQcaSqXzBMfcO_4eWK8Oh1B3gFUgKof8",
 	data={"type": [form_data["diet"]]})
 	print form_data["diet"]
 	print callAPI.text
-	return render_template("foods.html")
+	return render_template('foods.html', variable="food")
 
 app.run(debug=True)

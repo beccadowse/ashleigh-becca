@@ -4,28 +4,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="static/css/appstyle.css">
   <title>FriendFeed</title>
 </head>
  
-<body>
+<body style="background-color: rgb(251, 60, 97)">
  	<header>
-		<div class="jumbotron">
-	      	<h1>FoodFriends</h1>
-	    	<h2>Food + Friends - Fuss.</h2>
-	    	<h2><small>Download the App Now!</small></h2><br />
+		<div class="jumbotron" style="background-image: url(https://cdn.dribbble.com/users/76620/screenshots/1909179/foodpattern-drbl800.gif); background-size: cover;"">
+			<div style="background-color: rgba(255, 255, 255, 0.8);">
+		      	<h1 class="display-1" class="text-center">FoodFriends</h1>
+		    	<h2 class="text-center">Food + Friends - Fuss.</h2>
+		    	<h2 class="text-center" class="lead"><small>Download the App Now!</small></h2><br />
   		</div>
    </header>
-  	<div id=Form>
- 		<h1>Who's there?</h1>
- 			<div id="dietary-form">
-				<form method="post" action="/foods">
-					<label form="name">Name:</label>
-						<input type="firstname" id="firstname" name="firstname"><br>
-					<label form="diet" id="diet" name="diet"></label>
-  						<input type="checkbox" name="diet" value="vegetarian"> Vegetarian<br>
- 					<input type="submit" value="submit" id="submit-button">
-				 </form>
+  	<div id=Form class="container-fluid" >
+  		<div class="row justify-content-md-center">
+ 			<div class="row">
+ 				<div class="col"></div>
+ 				<div class="col-12" id="dietary-form" style="background-color: white; margin: 10%; border-style: 50px solid white; border-radius: 5px;">
+ 					<h1 class="text-center">Who's there?</h1>
+						<form method="post" action="/foods">
+							<label form="name">Name:</label>
+								<input type="firstname" id="firstname" name="firstname"><br>
+							<label form="diet" id="diet" name="diet"></label>
+		  						<input type="checkbox" name="diet" value="vegetarian"> Vegetarian<br>
+		  						<p>&nbsp;</p>
+		  					<div class="text-center">
+		 						<input type="submit" class="btn btn-info" value="submit" id="submit-button">
+		 					</div>
+						</form>
+				</div>
+				<div class="col"></div>	 
 			</div>
+		</div>	
 	</div>
 </body>
 </html>
