@@ -1,20 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <link rel="stylesheet" type="text/css" href="static/appstyle.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1", user-scaleable=no>
-  <title>FriendFeed</title>
+<title>HomePage</title>
+<link rel = 'stylesheet' type ='text/css' href = '../static/css/appstyle.css'>
+<script type="text/javascript">
+        // Get the modal
+var modal = document.getElementById('modal');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+      /* When the user clicks on the button,
+     toggle between hiding and showing the dropdown content */
+    function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+     }
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
 </head>
+<body>
+  <div id='page_content'>
 
- <body>
- <h1>Hi there veggie!</h1>
- <div id="dietary-form">
-<form method="post" action="/foods">
-<label form="name">Name:</label>
-<input type="firstname" id="firstname" name="firstname"><br>
-<label form="diet" id="diet" name="diet"></label>
-  <input type="checkbox" name="diet" value="vegetarian"> Vegetarian<br>
-  <input type="submit" value="submit" id="submit-button">
+    <header id='header'>
+      <h1>FoodFriends</h1>
+      <h2> Food + Friends - Fuss</h2>
+      <div class = "drop-down">
+          <button onclick="myFunction()" class="dropbtn">Menu</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a onclick="window.location.href='hello.html'"> Home</a>
+            <a  onclick="window.location.href='profile.html'">Profile</a>
+            <a onclick="document.getElementById('modal').style.display='block'">Choose Cuisine</a>
+          </div>
+      </div>
+  </header>
 
- </form>
- </html>
+
+<!-- The Modal -->
+ <div id="modal" class="modal">
+  <span onclick="document.getElementById('modal').style.display='none'"
+   class="close" title="Close Modal">&times;</span>
+
+  <!-- Modal Content -->
+  <form class="modal-content animate" method="post" action="/foods" >
+    <div id="imgcontainer">
+      <img src="../static/images/hello.png" id='camera'>
+    </div>
+
+    <div id='container'>
+     <form method="post" action="/foods">
+       <label form="name">Name:</label>
+       <input type="firstname" id="firstname" name="firstname"><br>
+       <label form="diet" id="diet" name="diet"></label>
+       <input type="checkbox" name="diet" value="vegetarian"> Vegetarian<br>
+       <input type="submit" value="submit" id="submit-button">
+      </form>
+    </div>
+
+    <div id='bottom_container' style="background-color:#f1f1f1">
+      <button id='button' type="button" onclick="document.getElementById('modal').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+</div>
+</body>
+</html>
