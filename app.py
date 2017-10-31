@@ -16,12 +16,16 @@ def show_veg_restaurants():
 	print form_data["diet"] + " restaurants:" #prints if user vegetarian or not
 	#print callAPI.text
 	results = callAPI.json()["results"] #parse the list of objects returned by the API to JSON and just get the 'results' array
-	restaurant_names = [] #empty list to push the names into
+	restaurant_names= [] #empty list to push the names into
+
 	for restaurants in results :
+
 		print restaurants["name"]
 		restaurant_names.append(restaurants["name"]) #push the names into the list
 		restaurant_list = json.dumps(restaurant_names) #convert the list to a JSONarray
-		#print restaurant_list
+		#print restaurants["icon"]
+		#print restaurants["photos"]
+
 
 
 	return render_template("foods.html",restaurant_list=restaurant_list)
