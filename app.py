@@ -13,10 +13,8 @@ def show_veg_restaurants():
 	form_data = request.form
 	callAPI = requests.post("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&keyword=vegetarian&key=AIzaSyBmr7SG3-JPw7sGZc_J300-NDgECV-4wC0",
 	data={"type": [form_data["diet"]]})
-	print form_data["diet"] #prints if user vegetarian or not
-	#print callAPI.text
+	print form_data["diet"] + " restaurants:" #prints if user vegetarian or not
 	results = callAPI.json()["results"] #parse the array of objects returned by the API to JSON and just get the 'results' array
-	#print restaurants
 	for restaurants in results :
 		print restaurants["name"]
 
