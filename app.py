@@ -11,24 +11,35 @@ def hello (): #a function that returns hello world
 @app.route("/foods", methods=["POST"])
 def show_veg_restaurants():
 	form_data = request.form
-	callAPI = requests.post("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&keyword=vegetarian&key=AIzaSyBmr7SG3-JPw7sGZc_J300-NDgECV-4wC0",
+	callAPI = requests.post("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=51.528837,-0.165653&radius=500&type=restaurant&keyword=vegetarian&key=AIzaSyBmr7SG3-JPw7sGZc_J300-NDgECV-4wC0",
 	data={"type": [form_data["diet"]]})
 	print form_data["diet"] + " restaurants:" #prints if user vegetarian or not
 	#print callAPI.text
 	results = callAPI.json()["results"] #parse the list of objects returned by the API to JSON and just get the 'results' array
 	restaurant_names= [] #empty list to push the names into
+	restaurant_map_link = []
+
 
 	for restaurants in results :
+		if (restaurants.has_key("photos")):
+			restaurant_names.append(restaurants["name"])
+			print restaurants["name"]
+			for links in restaurants["photos"]:
+				print links["html_attributions"]
+				restaurant_map_link.append(links["html_attributions"])
+				rest = restaurant_map_link
 
-		print restaurants["name"]
-		restaurant_names.append(restaurants["name"]) #push the names into the list
-		restaurant_list = json.dumps(restaurant_names) #convert the list to a JSONarray
-		#print restaurants["icon"]
-		#print restaurants["photos"]
+
+		#restaurant_names.append(restaurants["name"]) #push the names into the list
+		#print len(restaurant_names)
+		#restuarant_list=restaurant_names
 
 
 
-	return render_template("foods.html",restaurant_list=restaurant_list)
+
+
+
+	return render_template("foods.html", restaurant_names = restaurant_names, rest = rest)
 
 
 app.run(debug=True)
