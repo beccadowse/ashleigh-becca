@@ -8,7 +8,10 @@
 #header{
   height:600px;
   width: inherit;
+  background-image: url("/Users/ahysl1/Downloads/ashleigh-becca-master/depositphotos_23072088-stock-illustration-fast-food-pattern.jpg");
+  background-size: cover;
 }
+
 
 h1, h2{
   margin: 0;
@@ -141,3 +144,4 @@ h1, h2{
     from {transform: scale(0)}
     to {transform: scale(1)}
 }
+
