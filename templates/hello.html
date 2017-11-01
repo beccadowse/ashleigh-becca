@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel = 'stylesheet' type ='text/css' href = '../static/css/appstyle.css'>
 <title>HomePage</title>
-<link rel = 'stylesheet' type ='text/css' href = '../static/css/appstyle.css'>
 <script type="text/javascript">
         // Get the modal
 var modal = document.getElementById('modal');
@@ -36,49 +39,55 @@ window.onclick = function(event) {
 }
 </script>
 </head>
-<body>
+<body style="background-color: rgb(251, 60, 97)">>
   <div id='page_content'>
 
-    <header id='header'>
-      <h1>FoodFriends</h1>
-      <h2> Food + Friends - Fuss</h2>
-      <div class = "drop-down">
-          <button onclick="myFunction()" class="dropbtn">Menu</button>
-          <div id="myDropdown" class="dropdown-content">
-            <a onclick="window.location.href='hello.html'"> Home</a>
-            <a  onclick="window.location.href='profile.html'">Profile</a>
-            <a onclick="document.getElementById('modal').style.display='block'">Choose Cuisine</a>
-          </div>
-      </div>
+    <header id='header' class="jumbotron" style="background-image: url(https://cdn.dribbble.com/users/76620/screenshots/1909179/foodpattern-drbl800.gif); background-size: cover;">
+        <div style="background-color: rgba(255,255,255,0.8); text-align: center">
+                <h1>FoodFriends</h1>
+                <h2> Food + Friends - Fuss</h2>
+                <div class="drop-down">
+                    <button onclick="myFunction()" class="dropbtn" class="btn btn-info">Menu</button>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a onclick="window.location.href='hello.html'"> Home</a>
+                      <a  onclick="window.location.href='profile.html'">Profile</a>
+                      <a onclick="document.getElementById('modal').style.display='block'">Choose Cuisine</a>
+                    </div>
+                </div>
+                </div>
   </header>
 
 
 <!-- The Modal -->
- <div id="modal" class="modal">
+ <div id="modal" class="modal" tabindex="-1" role="dialog" role="document">
   <span onclick="document.getElementById('modal').style.display='none'"
    class="close" title="Close Modal">&times;</span>
 
   <!-- Modal Content -->
-  <form class="modal-content animate" method="post" action="/foods" >
-    <div id="imgcontainer">
-      <img src="../static/images/hello.png" id='camera'>
+  <div class="modal-header">
+      <h5 class="modal-title">What are your dietary requirements </h5>
     </div>
+    <div class="modal-body">
+      <form class="modal-content animate" method="post" action="/foods" >
+        
 
-    <div id='container'>
-     <form method="post" action="/foods">
-       <label form="name">Name:</label>
-       <input type="firstname" id="firstname" name="firstname"><br>
-       <label form="diet" id="diet" name="diet"></label>
-       <input type="checkbox" name="diet" value="vegetarian"> Vegetarian<br>
-       <input type="submit" value="submit" id="submit-button">
-      </form>
-    </div>
+        <div id='container'>
+         <form method="post" action="/foods">
+           <label form="name">Name:</label>
+           <input type="firstname" id="firstname" name="firstname"><br>
+           <label form="diet" id="diet" name="diet"></label>
+           <input type="checkbox" name="diet" value="vegetarian"> Vegetarian<br>
+           <input type="submit" value="submit" id="submit-button">
+          </form>
+        </div>
+      
 
-    <div id='bottom_container' style="background-color:#f1f1f1">
+    <div class="modal-footer" id='bottom_container' style="background-color:#f1f1f1">
       <button id='button' type="button" onclick="document.getElementById('modal').style.display='none'" class="cancelbtn">Cancel</button>
     </div>
   </form>
 </div>
+
 
 </div>
 </body>
