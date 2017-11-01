@@ -7,8 +7,15 @@
 </head>
 
 <body>
-<h1> {{restaurant_list}} </h1>
+  <h1> Available restaurants: </h1>
+    {% for item in restaurant_names: %}
+        <p>{{item}}</p>
+
+    {% endfor %}
+
+    {%for location in rest: %}
+      {{location}}
+    {% endfor %}
 </body>
 
 </html>
-
