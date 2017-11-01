@@ -23,23 +23,15 @@ def show_veg_restaurants():
 	for restaurants in results :
 		if (restaurants.has_key("photos")):
 			restaurant_names.append(restaurants["name"])
-			print restaurants["name"]
 			for links in restaurants["photos"]:
-				print links["html_attributions"]
-				restaurant_map_link.append(links["html_attributions"])
-				rest = restaurant_map_link
+				restaurant_map_link.append(links["html_attributions"][0])
+				location = restaurant_map_link
 
 
 		#restaurant_names.append(restaurants["name"]) #push the names into the list
 		#print len(restaurant_names)
 		#restuarant_list=restaurant_names
-
-
-
-
-
-
-	return render_template("foods.html", restaurant_names = restaurant_names, rest = rest)
+	return render_template("foods.html", restaurant_names = restaurant_names, location = location)
 
 
 app.run(debug=True)
