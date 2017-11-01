@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" type="text/css" href="static/appstyle.css">
+  <link rel="stylesheet" type="text/css" href='../static/css/foodstyle.css'>
   <meta name="viewport" content="width=device-width, initial-scale=1", user-scaleable=no>
   <title>food pg</title>
 </head>
 
 <body>
+
   <h1> Available restaurants: </h1>
-    {% for item in restaurant_names: %}
-        <p>{{item}}</p>
-
+  <div id = "vegetarian_restuarants">
+    {%for location_link in location: %}
+      <p id = "locationLinks"> {{location_link | safe }} </p>
     {% endfor %}
-
-    {%for location in rest: %}
-      {{location}}
-    {% endfor %}
+  </div>
 </body>
 
 </html>
